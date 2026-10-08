@@ -1,4 +1,4 @@
-package com.example.assignment3.entity;
+package com.example.assignment3.characters;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
