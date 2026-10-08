@@ -48,7 +48,7 @@ public class SciFiCharacterService {
         existing.setDescription(updated.getDescription());
         existing.setSpecies(updated.getSpecies());
 
-        return repository.save(existing)
+        return repository.save(existing);
      }
 
     public void delete(Long id) {
