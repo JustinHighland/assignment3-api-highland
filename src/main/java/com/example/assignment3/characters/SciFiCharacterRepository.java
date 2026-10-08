@@ -9,4 +9,6 @@ public interface SciFiCharacterRepository extends JpaRepository<SciFiCharacter, 
     List<SciFiCharacter> findByFranchiseIgnoreCase(String franchise);
 
     List<SciFiCharacter> findByNameContainingIgnoreCase(String name);
+
+    List<SciFiCharacter> findByNameContainingIgnoreCaseAndFranchiseIgnoreCase(String name, String franchise);
 }
