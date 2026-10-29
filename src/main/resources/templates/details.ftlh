@@ -19,7 +19,7 @@
 
         <div class="navbar-nav d-flex flex-row gap-5">
             <a class="nav-link text-white" href="index.html">Home</a>
-            <a class="nav-link text-white" href="details.html">Details</a>
+            <a class="nav-link text-white" href="details">Details</a>
             <a class="nav-link text-white" href="about.html">About</a>
             <a class="nav-link text-white" href="new-character-form.html">Add a Character</a>
         </div>
