@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/characters")
 public class UIController {
 
+        private final SciFiCharacterService service;
+
+    public UIController(SciFiCharacterService service){
+        this.service = service;
+    }
+
 
     @GetMapping("/about")
     public String about(){
@@ -17,6 +23,7 @@ public class UIController {
 
     @GetMapping("/{id}")
 public String details(@PathVariable long id){
+
     return "details";
 }
     
