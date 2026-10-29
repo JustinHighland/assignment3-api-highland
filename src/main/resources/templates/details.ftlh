@@ -35,7 +35,7 @@
     <div class="container mt-4">
 
     <div class="page-header">
-    <h1>Darth Vader</h1>
+    <h1>${myChar.name}</h1>
     <p>Sith Lord</p>
     </div> 
 
@@ -47,9 +47,7 @@
 
         <div class="col-md-6 character-info">
             <h2>Backstory</h2>
-            <p>Once known by the name Anakin Skywalker, a powerful Jedi who fell to the dark side of the Force.
-                After suffering devastating injuries in a battle againts Obi-Wan Kenobi, Anakin was rebuilt and 
-                transformed into Darth Vader, the most feared weapon of the Galatic Empire.
+            <p>${myChar.description}
             </p>
 
             <h2>Abilities</h2>
