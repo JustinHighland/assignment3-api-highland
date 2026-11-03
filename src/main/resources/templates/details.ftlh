@@ -51,12 +51,11 @@
             </p>
 
             <h2>Abilities</h2>
-            <p>Highly skilled lightsaber combatant. Force powers like force choke. 
-                Enhanced physical strength and reflexes.
+            <p>${myChar.abilities}
             </p>
 
             <h2>First Appearance</h2>
-            <p>Darth Vader first appeared in Star Wars, released in 1977.</p>
+            <p>${myChar.firstAppearance}</p>
 
             <h2>Personality Traits</h2>
             <p>Intimidating, disciplined, and ruthless. Known for his combat skills and devotion

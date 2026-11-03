@@ -47,6 +47,10 @@ public class SciFiCharacterService {
         existing.setFranchise(updated.getFranchise());
         existing.setDescription(updated.getDescription());
         existing.setSpecies(updated.getSpecies());
+        existing.setAbilities(updated.getAbilities());
+        existing.setFirstAppearance(updated.getFirstAppearance());
+        existing.setPersonalityTraits(updated.getPersonalityTraits());
+        existing.setImageUrl(updated.getImageUrl());
 
         return repository.save(existing);
      }

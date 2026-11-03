@@ -28,14 +28,29 @@ public class SciFiCharacter {
     @NotBlank
     private String species;
 
+    @NotBlank 
+    private String abilities;
+
+    @NotBlank 
+    private String firstAppearance;
+
+    @NotBlank 
+    private String personalityTraits;
+
+    private String imageUrl;
+
     public SciFiCharacter() {
 
     }
-    public SciFiCharacter(String name, String description, String franchise, String species){
+    public SciFiCharacter(String name, String description, String franchise, String species, String abilities, String firstAppearance, String personalityTraits, String imageUrl){
         this.name = name;
         this.description = description;
         this.franchise = franchise;
         this.species = species;
+        this.abilities = abilities;
+        this.firstAppearance = firstAppearance;
+        this.personalityTraits = personalityTraits;
+        this.imageUrl = imageUrl;
 
     }
 
@@ -54,6 +69,18 @@ public class SciFiCharacter {
     public String getSpecies(){
         return species;
     }
+    public String getAbilities(){
+        return abilities;
+    }
+    public String getPersonalityTraits(){
+        return personalityTraits;
+    }
+    public String getFirstAppearance(){
+        return firstAppearance;
+    }
+    public String getImageUrl(){
+        return imageUrl;
+    }
 
     public void setName(String name){
         this.name = name;
@@ -67,6 +94,19 @@ public class SciFiCharacter {
     public void setSpecies(String species){
         this.species = species;
     }
+    public void setAbilities(String abilities){
+        this.abilities = abilities;
+    }
+    public void setPersonalityTraits(String personalityTraits){
+        this.personalityTraits = personalityTraits;
+    }
+    public void setFirstAppearance(String firstAppearance){
+        this.firstAppearance = firstAppearance;
+    }
+    public void setImageUrl(String imageUrl){
+        this.imageUrl = imageUrl;
+    }
+
 
 
 

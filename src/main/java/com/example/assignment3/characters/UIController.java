@@ -3,11 +3,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/characters")
 public class UIController {
 
         private final SciFiCharacterService service;
@@ -22,12 +20,18 @@ public class UIController {
         return "about";
     }
 
-    @GetMapping("/{id}")
-public String details(@PathVariable long id, Model model){
-SciFiCharacter character = service.findById(id);
-model.addAttribute("myChar", character);
+    @GetMapping("/characters/{id}")
+    public String details(@PathVariable long id, Model model){
+    SciFiCharacter character = service.findById(id);
+    model.addAttribute("myChar", character);
 
-    return "details";
+        return "details";
+}
+
+    @GetMapping("/")
+    public String gallery(Model model) {
+    model.addAttribute("characters", service.findAll());
+        return "index";
 }
     
 }
