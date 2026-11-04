@@ -3,6 +3,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -29,9 +30,16 @@ public class UIController {
 }
 
     @GetMapping("/")
-    public String gallery(Model model) {
-    model.addAttribute("characters", service.findAll());
-        return "index";
+public String gallery(
+        @RequestParam(required = false) String name,
+        @RequestParam(required = false) String franchise,
+        Model model) {
+
+    model.addAttribute("characters", service.search(name, franchise));
+    model.addAttribute("searchName", name);
+    model.addAttribute("searchFranchise", franchise);
+
+    return "index";
 }
     
 }

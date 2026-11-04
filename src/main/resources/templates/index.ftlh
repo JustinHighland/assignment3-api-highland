@@ -8,6 +8,32 @@
     <p>Explore legendary characters from iconic science-fiction universes.</p>
 </div>
 
+<form action="/" method="get" class="row g-3 mb-4">
+
+    <div class="col-md-5">
+        <input type="text"
+               name="name"
+               class="form-control"
+               placeholder="Search by character name"
+               value="${searchName!}">
+    </div>
+
+    <div class="col-md-5">
+        <input type="text"
+               name="franchise"
+               class="form-control"
+               placeholder="Search by franchise"
+               value="${searchFranchise!}">
+    </div>
+
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-dark w-100">
+            Search
+        </button>
+    </div>
+
+</form>
+
 <div class ="container-fluid">
     <div class="row g-4 justify-content-center">
      
