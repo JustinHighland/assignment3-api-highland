@@ -48,7 +48,7 @@ public String gallery(
 
 @GetMapping("/characters/new")
 public String showAddForm() {
-    return "add-character";
+    return "new-character-form";
 }
 
 @PostMapping("/characters")
@@ -62,6 +62,16 @@ public String addCharacter(
             "successMessage", "Character added successfully!");
 
     return "redirect:/";
+}
+
+@GetMapping("/characters/{id}/edit")
+public String showEditForm(@PathVariable long id, Model model) {
+
+    SciFiCharacter character = service.findById(id);
+
+    model.addAttribute("myChar", character);
+
+    return "edit-character";
 }
     
 }
