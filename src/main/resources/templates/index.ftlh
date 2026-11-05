@@ -46,7 +46,7 @@
                 <img src="${character.imageUrl}" class="card-img-top"
                      style="height: 240px; object-fit: cover;">
             <#else>
-                <img src="/images/placeholder.png" class="card-img-top"
+                <img src="/images/placeholder.svg" class="card-img-top"
                      style="height: 240px; object-fit: cover;">
             </#if>
 

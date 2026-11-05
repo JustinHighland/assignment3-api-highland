@@ -17,7 +17,7 @@
                      class="img-fluid rounded character-image"
                      style="width: 100%; height: 600px; object-fit: cover;">
             <#else>
-                <img src="/images/placeholder.png"
+                <img src="/images/placeholder.svg"
                      class="img-fluid rounded character-image"
                      style="width: 100%; height: 600px; object-fit: cover;">
             </#if>
