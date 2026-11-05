@@ -1,77 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add a Character</title>
+<#import "layout.ftlh" as layout>
 
-     <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-    rel="stylesheet">
+<@layout.page title="Add a Character">
 
-    <link rel="stylesheet" href="Visual.css">
-
-</head>
-
-
-<body>
-    
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-
-        <div class="navbar-nav d-flex flex-row gap-5">
-            <a class="nav-link text-white" href="index.html">Home</a>
-            <a class="nav-link text-white" href="details.html">Details</a>
-            <a class="nav-link text-white" href="about.html">About</a>
-            <a class="nav-link text-white" href="new-character-form.html">Add a Character</a>
-        </div>
-
-        <form class="d-flex ms-auto">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
-
-    </div>
-</nav>
-
-<div class="page-header">
-<h1>Add a Character</h1>
-</div>
 
 <div class="container mt-4">
+
+    <div class="page-header">
+        <h1>Add a Character</h1>
+    </div>
+
 
     <div class="form-subtitle">
         <p>Fill out the fields below to add your favorite sci-fi character!</p>
     </div>
 
+      <form action="/characters" method="post">
+
     <div class="mb-3">
     <label for="characterName" class="form-label">Character Name</label>
-    <input type="text" class="form-control" id="characterName">
+    <input type="text" class="form-control" id="characterName" name="name" required>
 </div>
 
 <div class="mb-3">
-    <label for="universe" class="form-label">Universe</label>
-    <input type="text" class="form-control" id="universe">
+    <label for="franchise" class="form-label">Franchise</label>
+    <input type="text" class="form-control" id="franchise" name="franchise" required>
 </div>
 
 <div class="mb-3">
-    <label for="role" class="form-label">Role</label>
-    <input type="text" class="form-control" id="role">
+    <label for="species" class="form-label">Species</label>
+    <input type="text" class="form-control" id="species" name="species" required>
 </div>
 
 <div class="mb-3">
     <label for="imageUrl" class="form-label">Image URL</label>
-    <input type="url" class="form-control" id="imageUrl">
+    <input type="url" class="form-control" id="imageUrl" name="imageUrl">
 </div>
 
 <div class="mb-3">
-    <label for="description" class="form-label">Short Description</label>
-    <textarea class="form-control" id="description" rows="4"></textarea>
+    <label for="description" class="form-label">Description</label>
+    <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+</div>
+
+<div class="mb-3">
+    <label for="abilities" class="form-label">Abilities</label>
+    <textarea class="form-control" id="abilities" name="abilities" rows="4" required></textarea>
+</div>
+
+<div class="mb-3">
+    <label for="firstAppearance" class="form-label">First Appearance</label>
+    <textarea class="form-control" id="firstAppearance" name="firstAppearance" rows="4" required></textarea>
+</div>
+
+<div class="mb-3">
+    <label for="personalityTraits" class="form-label">Personality Traits</label>
+    <textarea class="form-control" id="personalityTraits" name="personalityTraits" rows="4" required></textarea>
 </div>
 
 <button type="submit" class="btn btn-primary">Add Character</button>
 
+</form>
+
 </div>
 
-</body>
-</html>
+
+</@layout.page>
