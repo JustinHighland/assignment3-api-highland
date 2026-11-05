@@ -87,5 +87,28 @@ public String updateCharacter(
 
     return "redirect:/characters/" + id;
 }
+
+@PostMapping("/characters/{id}/delete")
+public String deleteCharacter(
+        @PathVariable long id,
+        RedirectAttributes redirectAttributes) {
+
+    service.delete(id);
+
+    redirectAttributes.addFlashAttribute(
+            "successMessage", "Character deleted successfully!");
+
+    return "redirect:/";
+}
+
+@GetMapping("/characters/{id}/delete")
+public String showDeleteConfirmation(@PathVariable long id, Model model) {
+
+    SciFiCharacter character = service.findById(id);
+
+    model.addAttribute("myChar", character);
+
+    return "delete-confirmation";
+}
     
 }

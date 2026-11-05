@@ -57,11 +57,8 @@
         <a href="/characters/${myChar.characterId}/edit"
            class="btn btn-primary">Edit Character</a>
 
-        <form action="/characters/${myChar.characterId}/delete"
-              method="post">
-            <button type="submit" class="btn btn-danger">
-                Delete Character
-            </button>
+       <a href="/characters/${myChar.characterId}/delete"
+            class="btn btn-danger">Delete Character</a>
         </form>
 
     </div>
