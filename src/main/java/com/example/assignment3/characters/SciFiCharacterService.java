@@ -41,19 +41,44 @@ public class SciFiCharacterService {
         return repository.save(sciFiCharacter);
     }
 
-    public SciFiCharacter update(Long id, SciFiCharacter updated) {
-        SciFiCharacter existing = findById(id);
-        existing.setName(updated.getName());
-        existing.setFranchise(updated.getFranchise());
-        existing.setDescription(updated.getDescription());
-        existing.setSpecies(updated.getSpecies());
-        existing.setAbilities(updated.getAbilities());
-        existing.setFirstAppearance(updated.getFirstAppearance());
-        existing.setPersonalityTraits(updated.getPersonalityTraits());
-        existing.setImageUrl(updated.getImageUrl());
+public SciFiCharacter update(Long id, SciFiCharacter updated) {
 
-        return repository.save(existing);
-     }
+    SciFiCharacter existing = findById(id);
+
+    if (updated.getName() != null && !updated.getName().isBlank()) {
+        existing.setName(updated.getName());
+    }
+
+    if (updated.getFranchise() != null && !updated.getFranchise().isBlank()) {
+        existing.setFranchise(updated.getFranchise());
+    }
+
+    if (updated.getDescription() != null && !updated.getDescription().isBlank()) {
+        existing.setDescription(updated.getDescription());
+    }
+
+    if (updated.getSpecies() != null && !updated.getSpecies().isBlank()) {
+        existing.setSpecies(updated.getSpecies());
+    }
+
+    if (updated.getAbilities() != null && !updated.getAbilities().isBlank()) {
+        existing.setAbilities(updated.getAbilities());
+    }
+
+    if (updated.getFirstAppearance() != null && !updated.getFirstAppearance().isBlank()) {
+        existing.setFirstAppearance(updated.getFirstAppearance());
+    }
+
+    if (updated.getPersonalityTraits() != null && !updated.getPersonalityTraits().isBlank()) {
+        existing.setPersonalityTraits(updated.getPersonalityTraits());
+    }
+
+    if (updated.getImageUrl() != null && !updated.getImageUrl().isBlank()) {
+        existing.setImageUrl(updated.getImageUrl());
+    }
+
+    return repository.save(existing);
+}
 
     public void delete(Long id) {
         findById(id); // throws 404 if missing
