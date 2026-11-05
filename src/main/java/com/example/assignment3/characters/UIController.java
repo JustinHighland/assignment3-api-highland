@@ -4,6 +4,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -40,6 +43,25 @@ public String gallery(
     model.addAttribute("searchFranchise", franchise);
 
     return "index";
+
+}
+
+@GetMapping("/characters/new")
+public String showAddForm() {
+    return "add-character";
+}
+
+@PostMapping("/characters")
+public String addCharacter(
+        @ModelAttribute SciFiCharacter character,
+        RedirectAttributes redirectAttributes) {
+
+    service.create(character);
+
+    redirectAttributes.addFlashAttribute(
+            "successMessage", "Character added successfully!");
+
+    return "redirect:/";
 }
     
 }
