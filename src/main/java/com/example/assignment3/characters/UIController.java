@@ -73,5 +73,19 @@ public String showEditForm(@PathVariable long id, Model model) {
 
     return "edit-character";
 }
+
+@PostMapping("/characters/{id}")
+public String updateCharacter(
+        @PathVariable long id,
+        @ModelAttribute SciFiCharacter character,
+        RedirectAttributes redirectAttributes) {
+
+    service.update(id, character);
+
+    redirectAttributes.addFlashAttribute(
+            "successMessage", "Character updated successfully!");
+
+    return "redirect:/characters/" + id;
+}
     
 }
